@@ -39,15 +39,51 @@
 
 
 # Q  4 -->Find number of subarrays with sum = K (basic version)
-def subarray(arr,k):
-        count=0
-        for i in range(len(arr)):
-            s=0
-            for j in range(i,len(arr)):
-                s+=arr[j]
-                if s==k:
-                    count+=1
-        return count
-arr=[2,3,2,3]
-k=5
-print(subarray(arr,k))
+# def subarray(arr,k):
+#         count=0
+#         for i in range(len(arr)):
+#             s=0
+#             for j in range(i,len(arr)):
+#                 s+=arr[j]
+#                 if s==k:
+#                     count+=1
+#         return count
+# arr=[2,3,2,3]
+# k=5
+# print(subarray(arr,k))
+
+# Q 5 --> 
+def cntSubarrays(arr, k):
+        # code here
+#         i=0
+#         count=0
+        
+#         for i in range(len(arr)):
+#             sum=0
+#             for j in range(i,len(arr)):
+                 
+#                 sum+=arr[j]
+#                 if sum==k:
+#                     count+=1
+            
+#         return count
+# arr=[10,2,-2,-20,10]
+# k=10
+# print(cntSubarrays(arr,k))
+
+
+# optimized version
+    count=0
+    hasmap={0:1}
+    prefix_sum=0
+    for num in arr:
+        prefix_sum+=num
+        if (prefix_sum-k) in hasmap:
+            count+=hasmap[prefix_sum - k]
+        
+        hasmap[prefix_sum]=hasmap.get(prefix_sum,0)+1
+    return count
+
+arr=[10,2,-2,-20,10]
+k=10
+print(cntSubarrays(arr,k))
