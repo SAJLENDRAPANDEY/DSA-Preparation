@@ -82,3 +82,5 @@ print(df['revenue'].sum())
 print(df['profit'].sum())
 
 print(df['country'].nunique())
+
+# level 2
