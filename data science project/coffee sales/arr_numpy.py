@@ -77,10 +77,120 @@ df = df.drop(["Unnamed: 5","Unnamed: 6","Unnamed: 7"], axis=1)
 
 # pandas basic
 
-print(df['revenue'].sum())
+# print(df['revenue'].sum())
 
-print(df['profit'].sum())
+# print(df['profit'].sum())
 
-print(df['country'].nunique())
+# print(df['country'].nunique())
 
 # level 2
+# country wise revenue
+# result=(df.groupby('country')['revenue'].sum().reset_index().sort_values(by='revenue',ascending=False))
+# result.columns=('Country',"Revenue by country")
+# print(result.head(1))
+
+
+ 
+# city wise revenue
+# result=(df.groupby('city')['revenue'].sum().reset_index())
+# result.columns=('City',"sum of revenue by city")
+# print(result)
+
+
+# city wise max revenue
+# result=(df.groupby('city')['revenue'].sum().reset_index().sort_values(by='revenue',ascending=False))
+# result.columns=('City',"sum of revenue by city")
+# print(result.head(1))
+
+
+
+
+
+# top 5 product revenue
+# result=(df.groupby('product_name')['revenue'].sum().reset_index().sort_values(by='revenue',ascending=False))
+# result.columns=('Product Name','Revenue')
+# print(result.head(5))
+
+
+# category wise profit
+# data=(df.groupby('category')['profit'].sum())
+
+# data.plot(kind='bar')
+# plt.show()
+
+
+# store wise sales performance
+# data=(df.groupby('store_id')['revenue'].sum().reset_index().sort_values(by='revenue',ascending=False))
+# data.columns=('store_id','max_revenue')
+# print(data.head(1))
+
+# data.columns=('store_id','min_revenue')
+# print(data.tail(1))
+
+
+# Level 3
+
+# highest profit product
+# data=(df.groupby('product_name')['profit'].sum().reset_index().sort_values(by='profit',ascending=False))
+# data.columns=('max_product_name','profit')
+# print(data.head(1))
+
+# print(df.groupby('product_name')['profit'].max())
+
+# Kis country me sbse jyada profit h 
+# print(df.groupby('country')['profit'].sum().idxmax())
+
+# kis brand ke product jayada sales ho rhe h 
+# print(df.groupby('brand')['quantity'].sum().idxmax())
+
+# loss making product
+# print(df[df['profit']<0]['product_name'].unique())
+
+
+# LEVEL 4: Feature Engineering (Advanced)
+
+# profit margin ka column create kro
+df['profit_margin']=df['profit']/df['revenue']*100
+# print(df['profit_margin'])
+
+
+# Month extract karo
+df['month']=pd.to_datetime(df['order_date']).dt.month
+# print(df['month'])
+
+# monthly wise revenue
+# print(df.groupby('month')['revenue'].sum())
+
+# LEVEL 5: Visualization (Matplotlib)
+# top 5 products ka bar chart
+# data=df.groupby('product_name')['revenue'].sum().nlargest(5)
+# data.plot(kind='bar')
+# plt.show()
+
+
+
+# Q2 -->monthly sales
+# mothly_sales=df.groupby('month')['revenue'].sum()
+# mothly_sales.plot(kind='line')
+# plt.show()
+
+
+# Top 10 customers by revenue
+# print(df.groupby('customer_id')['revenue'].sum().nlargest(10))
+
+
+
+# top product kaun se h aur kyun 
+# data=(df.groupby('product_name',as_index=False).agg({'profit':'sum','revenue':'sum'}))
+# data['profit_margin']=data['profit']/data['revenue']*100
+# data=data.sort_values(by='profit_margin',ascending=False)
+# # print(data)
+# data.columns = ['Product Name', 'Total Profit', 'Total Revenue', 'Profit Margin']
+# print(data.head(5))
+
+
+# Top products wo hain jinka profit margin highest hai, iska matlab ye products ya to low cost pe produce ho rahe hain ya high pricing power rakhte hain. Ye business ke liye sabse efficient aur profitable segments hain.”
+
+
+# Kis country me profit high hai?
+print(df.groupby('country')['profit'].sum().idxmax())

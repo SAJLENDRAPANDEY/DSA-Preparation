@@ -90,22 +90,27 @@
 
 
 # subarray sum
-def subarraysum(arr,target):
-    # i=1
-    # left ptr
-    start=0
-    curr=0
-    # right ptr
-    for i in range(len(arr)):
-        curr+=arr[i]
+# def subarraysum(arr,target):
+#     # i=1
+#     # left ptr
+#     start=0
+#     curr=0
+#     # right ptr
+#     for i in range(len(arr)):
+#         curr+=arr[i]
 
-        while curr>target:
-            curr-=arr[start]
-            start+=1
-        if curr==target:
-            return[start+1,i+1]
-    return -1
+#         while curr>target:
+#             curr-=arr[start]
+#             start+=1
+#         if curr==target:
+#             return[start+1,i+1]
+#     return -1
     
-arr=[1, 2, 3, 7, 5]
-target = 12
-print(subarraysum(arr,target))
+# arr=[1, 2, 3, 7, 5]
+# target = 12
+# print(subarraysum(arr,target))
+
+
+
+# Contains dulicates
+def 
