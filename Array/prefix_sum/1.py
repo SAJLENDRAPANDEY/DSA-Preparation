@@ -112,5 +112,27 @@
 
 
 
-# Contains dulicates
-def 
+# Leaders in an Array
+# def leader(arr):
+#     max_l=arr[-1]
+#     res=[]
+#     res.append(max_l)
+#     n=len(arr)
+#     for i in range(n-2,-1,-1):
+#         if arr[i]>max_l:
+#             max_l=arr[i]
+#             res.append(arr[i])
+#     res.reverse()
+#     return res
+# arr= [16, 17, 4, 3, 5, 2]
+# print(leader(arr))
+
+
+# Missing Number
+def missing_number(arr):
+    n=len(arr)+1
+    actual_S=n*(n+1)//2
+    total_Sum=sum(arr)
+    return actual_S-total_Sum
+arr=[1,2,3,5]
+print(missing_number(arr))
