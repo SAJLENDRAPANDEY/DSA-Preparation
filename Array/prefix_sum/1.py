@@ -129,10 +129,13 @@
 
 
 # Missing Number
-def missing_number(arr):
-    n=len(arr)+1
-    actual_S=n*(n+1)//2
-    total_Sum=sum(arr)
-    return actual_S-total_Sum
-arr=[1,2,3,5]
-print(missing_number(arr))
+# def missing_number(arr):
+#     n=len(arr)+1
+#     actual_S=n*(n+1)//2
+#     total_Sum=sum(arr)
+#     return actual_S-total_Sum
+# arr=[1,2,3,5]
+# print(missing_number(arr))
+
+
+

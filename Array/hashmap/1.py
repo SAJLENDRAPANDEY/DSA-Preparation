@@ -9,14 +9,48 @@
 
 
 # 2 Find duplicate element
-def find_duplicate(arr):
-    freq={}
-    res=[]
-    for num in arr:
-        freq[num]=freq.get(num,0)+1
-    for num in freq:
-        if freq[num]>=2:
-            res.append(freq[num])
-    return res
-arr=[1,1,1,2,2,1,2,3,4,4,3,6]
-print(find_duplicate(arr))
+# def find_duplicate(arr):
+#     freq={}
+#     res=[]
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+#     for num in freq:
+#         if freq[num]>=2:
+#             res.append(freq[num])
+#     return res
+# arr=[1,1,1,2,2,1,2,3,4,4,3,6]
+# print(find_duplicate(arr))
+
+
+
+# 3 --> First repeating element
+# def first_repeat(arr):
+#     n=len(arr)
+#     for i in range(n):
+#         for j in range(i+1,n):
+#             if arr[i]==arr[j]:
+#                 return i+1
+            
+#     return -1
+    
+# arr=[1,2,3,4,2]
+# print(first_repeat(arr))
+
+
+# 4-->Two Sum (leetcode 1)
+def two_sum(arr,target):
+    seen={}
+    for i in range(len(arr)):
+        complement=target-arr[i]
+
+        if complement in seen:
+            return (seen[complement],i)
+    
+        seen[arr[i]]=i
+arr=[2,3,4,2,4]
+target=5
+print(two_sum(arr,target))
+
+
+
+
