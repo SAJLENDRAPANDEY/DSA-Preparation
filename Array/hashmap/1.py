@@ -38,19 +38,30 @@
 
 
 # 4-->Two Sum (leetcode 1)
-def two_sum(arr,target):
-    seen={}
-    for i in range(len(arr)):
-        complement=target-arr[i]
+# def two_sum(arr,target):
+#     seen={}
+#     for i in range(len(arr)):
+#         complement=target-arr[i]
 
-        if complement in seen:
-            return (seen[complement],i)
+#         if complement in seen:
+#             return (seen[complement],i)
     
-        seen[arr[i]]=i
-arr=[2,3,4,2,4]
-target=5
-print(two_sum(arr,target))
+#         seen[arr[i]]=i
+# arr=[2,3,4,2,4]
+# target=5
+# print(two_sum(arr,target))
 
 
+# 5 -->Majority Element(leetcode 169)
+def majority_ele(arr):
+    n=len(arr)
+    seen={}
+    for num in arr:
+        seen[num]=seen.get(num,0)+1
+
+        if seen[num]>n//2:
+            return num
+arr=[2,2,1,1,1,2,2]
+print(majority_ele(arr))
 
 

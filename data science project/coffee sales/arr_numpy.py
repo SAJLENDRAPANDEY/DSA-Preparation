@@ -50,7 +50,7 @@ df['profit_flag']=np.where(df['profit']>0 , "profit","loss")
 
 # print(df.columns)
 
-df = df.drop(["Unnamed: 5","Unnamed: 6","Unnamed: 7"], axis=1)
+df = df.drop(["Unnamed: 5","Unnamed: 6","Unnamed: 7"], axis=1,errors='ignore')
 
 # print(df.columns)
 
@@ -150,7 +150,7 @@ df = df.drop(["Unnamed: 5","Unnamed: 6","Unnamed: 7"], axis=1)
 # LEVEL 4: Feature Engineering (Advanced)
 
 # profit margin ka column create kro
-df['profit_margin']=df['profit']/df['revenue']*100
+df['profit_margin']=np.where(df['revenue']!=0,df['profit']/df['revenue']*100,0)
 # print(df['profit_margin'])
 
 
@@ -193,4 +193,58 @@ df['month']=pd.to_datetime(df['order_date']).dt.month
 
 
 # Kis country me profit high hai?
-print(df.groupby('country')['profit'].sum().idxmax())
+# print(df.groupby('country')['profit'].sum().idxmax())
+
+# Kya discount se loss ho raha hai?
+# sns.scatterplot(x='discount',y='profit',data=df)
+# plt.show()
+
+
+# print(df.groupby('discount').agg({
+#     'profit':'mean',
+#     'revenue':'mean',
+#     'profit_margin':'mean'
+# }).reset_index())
+
+# kam discounnt se jayda profit ho rha h 
+
+# q3->Kaunse products loss de rahe hain?
+# product_profit=df.groupby('product_name')['profit'].sum()
+
+# loss_product=product_profit[product_profit<0]
+# print(loss_product)
+
+
+# koi bhi product nhi h jo loss de rhe h 
+
+#  q4-->Revenue vs Profit relation
+# sns.scatterplot(x='revenue',y='profit',data=df)
+# plt.show()
+
+
+# Q 5 --> Discount vs Profit
+# sns.boxenplot(x='discount',y='profit',data=df)
+# plt.show()
+
+
+# Q 6 -->KPI Metrics (Professional Touch)
+# total_revenue=df['revenue'].sum()
+# print(total_revenue)
+
+# Total Profit
+# total_profit=df['profit'].sum()
+# print(total_profit)
+
+
+# Avg Profit
+# average_profit=df['profit'].mean()
+# print(average_profit)
+
+
+# Store Performance Ranking
+# print(df.groupby('store_id')['profit'].sum().rank(ascending=False))
+
+
+# Time Series Analysis
+df.groupby('month')['profit'].sum().plot()
+plt.show()
