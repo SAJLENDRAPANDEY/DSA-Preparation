@@ -53,15 +53,39 @@
 
 
 # 5 -->Majority Element(leetcode 169)
-def majority_ele(arr):
-    n=len(arr)
-    seen={}
-    for num in arr:
-        seen[num]=seen.get(num,0)+1
+# def majority_ele(arr):
+#     n=len(arr)
+#     seen={}
+#     for num in arr:
+#         seen[num]=seen.get(num,0)+1
 
-        if seen[num]>n//2:
-            return num
-arr=[2,2,1,1,1,2,2]
-print(majority_ele(arr))
+#         if seen[num]>n//2:
+#             return num
+# arr=[2,2,1,1,1,2,2]
+# print(majority_ele(arr))
 
 
+# 6-->
+def longestConsecutive( nums):
+        
+    if not nums:
+        return 0
+    num_Set=set(nums)
+    longest=0
+
+    for num in num_Set:
+        if num-1 not in num_Set:
+            current_num=num
+            count=1
+
+            while current_num+1 in num_Set:
+                current_num+=1
+                count+=1
+        longest=max(longest,count)
+    return longest
+
+
+
+
+nums=[100,4,200,1,3,2]
+print(longestConsecutive(nums))
