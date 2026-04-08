@@ -106,16 +106,34 @@
 
 
 # Q 6 --> first and last occurence (leetcode 34)
-def first_last(arr,target):
-    first=-1
-    last=-1
-    for i in range(len(arr)):
-        if arr[i]==target:
-            if first==-1:
-                first=i
-            last=i
+# def first_last(arr,target):
+#     first=-1
+#     last=-1
+#     for i in range(len(arr)):
+#         if arr[i]==target:
+#             if first==-1:
+#                 first=i
+#             last=i
             
-    return [first,last]
-arr = [5,7,7,8,8,10]
-target = 8
-print(first_last(arr,target))
+#     return [first,last]
+# arr = [5,7,7,8,8,10]
+# target = 8
+# print(first_last(arr,target))
+
+
+# Q 7 -->  Valid Perfect Square (leetcode 367)
+def valid_square(num):
+    start=0
+    stop=num
+    while start<=stop:
+        mid=(start+stop)//2
+        if mid*mid==num:
+            return True
+        elif mid*mid<num:
+            start=mid+1
+        else:
+            stop=mid-1
+    return False
+num=12
+print(valid_square(num))
+
