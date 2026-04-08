@@ -42,7 +42,29 @@
 
 
 # Q 3->First Occurrence
-def first_occurence(arr,target):
+# def first_occurence(arr,target):
+#     start=0
+#     stop=len(arr)-1
+#     ans=-1
+#     while start<=stop:
+#         mid=(start+stop)//2
+#         if arr[mid]==target:
+#             ans=mid
+#             stop=mid-1
+#         if arr[mid]<target:
+#             start=mid+1
+#         else:
+#             stop=mid-1
+#     return  ans
+
+# arr = [1,3,2,2,3]
+# target = 2
+# print(first_occurence(arr,target))
+
+
+
+# Q 4 --> Last occurence
+def last_occurence(arr,target):
     start=0
     stop=len(arr)-1
     ans=-1
@@ -50,13 +72,12 @@ def first_occurence(arr,target):
         mid=(start+stop)//2
         if arr[mid]==target:
             ans=mid
-            stop=mid-1
-        if arr[mid]<target:
+            start=mid+1
+        elif arr[mid]<target:
             start=mid+1
         else:
             stop=mid-1
-    return  ans
-
-arr = [1,3,2,2,3]
+    return ans
+arr = [1,2,2,2,3]
 target = 2
-print(first_occurence(arr,target))
+print(last_occurence(arr,target))
