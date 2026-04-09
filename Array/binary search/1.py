@@ -176,18 +176,30 @@
 
 # Q 2 --> Peak Index in a Mountain Array (Leetcode 852)
 
-def peak_element(arr):
-    n=len(arr)
-    if n==1:
-        return 0
-    if arr[0]>arr[1]:
-        return 0
-    if arr[n-1]>arr[n-2]:
-        return n-1
-    for i in range(1,n-1):
-        if arr[i]>arr[i-1] and arr[i]>arr[i+1]:
-            return i
+# def peak_element(arr):
+#     n=len(arr)
+#     if n==1:
+#         return 0
+#     if arr[0]>arr[1]:
+#         return 0
+#     if arr[n-1]>arr[n-2]:
+#         return n-1
+#     for i in range(1,n-1):
+#         if arr[i]>arr[i-1] and arr[i]>arr[i+1]:
+#             return i
 
-arr=[0,1,3,0]
-print(peak_element(arr))
+# arr=[0,1,3,0]
+# print(peak_element(arr))
 
+
+
+# Q 3 --> Count Frequency
+def count_freq(arr,target):
+    count=0
+    for i in range(len(arr)):
+        if arr[i]==target:
+            count+=1
+    return count
+arr=[1, 1, 2, 2, 2, 2, 3]
+target = 2
+print(count_freq(arr,target))
