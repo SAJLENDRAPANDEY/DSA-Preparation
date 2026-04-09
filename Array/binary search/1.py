@@ -122,18 +122,53 @@
 
 
 # Q 7 -->  Valid Perfect Square (leetcode 367)
+# def valid_square(num):
+#     start=0
+#     stop=num
+#     while start<=stop:
+#         mid=(start+stop)//2
+#         if mid*mid==num:
+#             return True
+#         elif mid*mid<num:
+#             start=mid+1
+#         else:
+#             stop=mid-1
+#     return False
+# num=12
+# print(valid_square(num))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Valid Perfect Square (oractice)
 def valid_square(num):
-    start=0
+    start=1
     stop=num
     while start<=stop:
         mid=(start+stop)//2
         if mid*mid==num:
             return True
-        elif mid*mid<num:
+        elif num*num<mid:
             start=mid+1
         else:
             stop=mid-1
     return False
-num=12
+num=16
 print(valid_square(num))
 
