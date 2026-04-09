@@ -157,18 +157,37 @@
 
 
 # Valid Perfect Square (oractice)
-def valid_square(num):
-    start=1
-    stop=num
-    while start<=stop:
-        mid=(start+stop)//2
-        if mid*mid==num:
-            return True
-        elif num*num<mid:
-            start=mid+1
-        else:
-            stop=mid-1
-    return False
-num=16
-print(valid_square(num))
+# def valid_square(num):
+#     start=1
+#     stop=num
+#     while start<=stop:
+#         mid=(start+stop)//2
+#         if mid*mid==num:
+#             return True
+#         elif num*num<mid:
+#             start=mid+1
+#         else:
+#             stop=mid-1
+#     return False
+# num=16
+# print(valid_square(num))
+
+
+
+# Q 2 --> Peak Index in a Mountain Array (Leetcode 852)
+
+def peak_element(arr):
+    n=len(arr)
+    if n==1:
+        return 0
+    if arr[0]>arr[1]:
+        return 0
+    if arr[n-1]>arr[n-2]:
+        return n-1
+    for i in range(1,n-1):
+        if arr[i]>arr[i-1] and arr[i]>arr[i+1]:
+            return i
+
+arr=[0,1,3,0]
+print(peak_element(arr))
 
