@@ -207,17 +207,31 @@
 
 
 # Q 4 --> find floor 
-def floor(arr,x):
-    n=len(arr)
-    if x>=arr[n-1]:
-        return n-1
-    elif arr[0]>x:
-        return -1
-    ans=-1
-    for i in range(0,n):
-        if arr[i]>=x:
-            return i-1
-    return ans
-arr= [1, 2, 8, 10, 10, 12, 19]
-x = 11
-print(floor(arr,x))
+# def floor(arr,x):
+#     n=len(arr)
+#     if x>=arr[n-1]:
+#         return n-1
+#     elif arr[0]>x:
+#         return -1
+#     ans=-1
+#     for i in range(0,n):
+#         if arr[i]>=x:
+#             return i-1
+#     return ans
+# arr= [1, 2, 8, 10, 10, 12, 19]
+# x = 11
+# print(floor(arr,x))
+
+
+
+
+# Q 5 -->  Single Element in a Sorted Array (Leetcode 540)
+def sorted_arr(arr):
+    freq={}
+    for num in arr:
+        freq[num]=freq.get(num,0)+1
+    for num in freq:
+        if freq[num]==1:
+            return  num
+arr = [1,1,2,3,3,4,4,8,8]
+print(sorted_arr(arr))
