@@ -194,12 +194,30 @@
 
 
 # Q 3 --> Count Frequency
-def count_freq(arr,target):
-    count=0
-    for i in range(len(arr)):
-        if arr[i]==target:
-            count+=1
-    return count
-arr=[1, 1, 2, 2, 2, 2, 3]
-target = 2
-print(count_freq(arr,target))
+# def count_freq(arr,target):
+#     count=0
+#     for i in range(len(arr)):
+#         if arr[i]==target:
+#             count+=1
+#     return count
+# arr=[1, 1, 2, 2, 2, 2, 3]
+# target = 2
+# print(count_freq(arr,target))
+
+
+
+# Q 4 --> find floor 
+def floor(arr,x):
+    n=len(arr)
+    if x>=arr[n-1]:
+        return n-1
+    elif arr[0]>x:
+        return -1
+    ans=-1
+    for i in range(0,n):
+        if arr[i]>=x:
+            return i-1
+    return ans
+arr= [1, 2, 8, 10, 10, 12, 19]
+x = 11
+print(floor(arr,x))
