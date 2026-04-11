@@ -226,12 +226,36 @@
 
 
 # Q 5 -->  Single Element in a Sorted Array (Leetcode 540)
-def sorted_arr(arr):
-    freq={}
-    for num in arr:
-        freq[num]=freq.get(num,0)+1
-    for num in freq:
-        if freq[num]==1:
-            return  num
-arr = [1,1,2,3,3,4,4,8,8]
-print(sorted_arr(arr))
+# def sorted_arr(arr):
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+#     for num in freq:
+#         if freq[num]==1:
+#             return  num
+# arr = [1,1,2,3,3,4,4,8,8]
+# print(sorted_arr(arr))
+
+
+
+# Q 6 --> Square Root of a Number(gfg)
+
+def floorSqrt(n): 
+        # code here
+    start=1
+    stop=n
+    ans=0
+    while start<=stop:
+        mid=(start+stop)//2
+        if mid*mid==n:
+            return mid
+        elif mid*mid<n:
+            start=mid+1
+            ans=mid
+        else:
+            stop=mid-1
+    return ans
+n=16
+print(floorSqrt(n))
+                
+                
