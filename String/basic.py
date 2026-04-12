@@ -60,10 +60,18 @@
 
 
 # Q 5 --> Count characters
-def count_char(s):
-    freq={}
-    for ch in s:
-        freq[ch]=freq.get(ch,0)+1
-    return freq
-s="hello"
-print(count_char(s))
+# def count_char(s):
+#     freq={}
+#     for ch in s:
+#         freq[ch]=freq.get(ch,0)+1
+#     return freq
+# s="hello"
+# print(count_char(s))
+
+
+
+# Q 6 -->> Remove spaces
+def remove_space(s):
+    return (s.replace(" ",""))
+s="hello World"
+print(remove_space(s))
