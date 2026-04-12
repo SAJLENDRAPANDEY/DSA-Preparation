@@ -46,14 +46,24 @@
 
 
 #  or 
-def palindrome_check(s):
-    start=0
-    stop=len(s)-1
-    while start<stop:
-        if s[start]!=s[stop]:
-            return False
-        start+=1
-        stop-=1
-    return True
-s="madam"
-print(palindrome_check(s))
+# def palindrome_check(s):
+#     start=0
+#     stop=len(s)-1
+#     while start<stop:
+#         if s[start]!=s[stop]:
+#             return False
+#         start+=1
+#         stop-=1
+#     return True
+# s="madam"
+# print(palindrome_check(s))
+
+
+# Q 5 --> Count characters
+def count_char(s):
+    freq={}
+    for ch in s:
+        freq[ch]=freq.get(ch,0)+1
+    return freq
+s="hello"
+print(count_char(s))
