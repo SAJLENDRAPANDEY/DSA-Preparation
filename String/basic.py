@@ -27,11 +27,33 @@
 # print(reverse_string(s))
 
 # or 
-def  reverse_String(s):
-    result=" "
-    for i in range(len(s)-1,-1,-1):
-        result+=s[i]
-    return result
+# def  reverse_String(s):
+#     result=" "
+#     for i in range(len(s)-1,-1,-1):
+#         result+=s[i]
+#     return result
     
-s="hello"
-print(reverse_String(s))
+# s="hello"
+# print(reverse_String(s))
+
+
+# Q 4 --> Palindrome check
+# def palindrome_check(s):
+#     s=s.lower().replace(" ","")
+#     return s==s[::-1]
+# s="madamg"
+# print(palindrome_check(s))
+
+
+#  or 
+def palindrome_check(s):
+    start=0
+    stop=len(s)-1
+    while start<stop:
+        if s[start]!=s[stop]:
+            return False
+        start+=1
+        stop-=1
+    return True
+s="madam"
+print(palindrome_check(s))
