@@ -110,12 +110,24 @@
 
 
 # Q 9--> Longest word in string
-def check_longest(s):
+# def check_longest(s):
+#     words=s.split()
+#     max_word=""
+#     for word in words:
+#         if len(word)>len(max_word):
+#             max_word=word
+#     return max_word
+# s="I love python programming"
+# print(check_longest(s))
+
+
+
+# Q 10 --> Count words
+def count_words(s):
     words=s.split()
-    max_word=""
+    count=0
     for word in words:
-        if len(word)>len(max_word):
-            max_word=word
-    return max_word
-s="I love python programming"
-print(check_longest(s))
+        count+=1
+    return count
+s="hello world python "
+print(count_words(s))
