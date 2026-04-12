@@ -91,17 +91,31 @@
 
 
 # Q 8 --> Check anagram
-def check_anangram(s1,s2):
-    if len(s1)!=len(s2):
-        return False
-    freq={}
-    for ch in s1:
-        freq[ch]=freq.get(ch,0)+1
-    for ch in s2:
-        if ch not in freq or freq[ch]==0:
-            return False
-        freq[ch]-=1
-    return True
-s1=input("Enter first: ")
-s2=input("Enter Second: ")
-print(check_anangram(s1,s2))
+# def check_anangram(s1,s2):
+#     if len(s1)!=len(s2):
+#         return False
+#     freq={}
+#     for ch in s1:
+#         freq[ch]=freq.get(ch,0)+1
+#     for ch in s2:
+#         if ch not in freq or freq[ch]==0:
+#             return False
+#         freq[ch]-=1
+#     return True
+# s1=input("Enter first: ")
+# s2=input("Enter Second: ")
+# print(check_anangram(s1,s2))
+
+
+
+
+# Q 9--> Longest word in string
+def check_longest(s):
+    words=s.split()
+    max_word=""
+    for word in words:
+        if len(word)>len(max_word):
+            max_word=word
+    return max_word
+s="I love python programming"
+print(check_longest(s))
