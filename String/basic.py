@@ -78,12 +78,30 @@
 
 
 # Q 7-->First non-repeating character
-def check_repeating(s):
+# def check_repeating(s):
+#     freq={}
+#     for ch in s:
+#         freq[ch]=freq.get(ch,0)+1
+#     for ch in freq:
+#         if freq[ch]==1:
+#             return ch
+# s="aabbcdd"
+# print(check_repeating(s))
+
+
+
+# Q 8 --> Check anagram
+def check_anangram(s1,s2):
+    if len(s1)!=len(s2):
+        return False
     freq={}
-    for ch in s:
+    for ch in s1:
         freq[ch]=freq.get(ch,0)+1
-    for ch in freq:
-        if freq[ch]==1:
-            return ch
-s="aabbcdd"
-print(check_repeating(s))
+    for ch in s2:
+        if ch not in freq or freq[ch]==0:
+            return False
+        freq[ch]-=1
+    return True
+s1=input("Enter first: ")
+s2=input("Enter Second: ")
+print(check_anangram(s1,s2))
