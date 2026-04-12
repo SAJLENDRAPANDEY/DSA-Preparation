@@ -71,7 +71,19 @@
 
 
 # Q 6 -->> Remove spaces
-def remove_space(s):
-    return (s.replace(" ",""))
-s="hello World"
-print(remove_space(s))
+# def remove_space(s):
+#     return (s.replace(" ",""))
+# s="hello World"
+# print(remove_space(s))
+
+
+# Q 7-->First non-repeating character
+def check_repeating(s):
+    freq={}
+    for ch in s:
+        freq[ch]=freq.get(ch,0)+1
+    for ch in freq:
+        if freq[ch]==1:
+            return ch
+s="aabbcdd"
+print(check_repeating(s))
