@@ -123,11 +123,25 @@
 
 
 # Q 10 --> Count words
-def count_words(s):
-    words=s.split()
-    count=0
-    for word in words:
-        count+=1
-    return count
-s="hello world python "
-print(count_words(s))
+# def count_words(s):
+#     words=s.split()
+#     count=0
+#     for word in words:
+#         count+=1
+#     return count
+# s="hello world python "
+# print(count_words(s))
+
+
+# Strings Rotations of Each Other(GFG)
+
+
+
+def areRotations( s1, s2):
+        # code here
+    if len(s1)!=len(s2):
+        return False
+    return s2 in(s1+s1)
+s1 = "abcd"
+s2 = "cdab"
+print(areRotations(s1,s2))
