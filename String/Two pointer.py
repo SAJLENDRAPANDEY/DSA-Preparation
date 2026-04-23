@@ -26,7 +26,21 @@
 
 
 # Q 3 --> Remove duplicates
-def remove_duplicate(s):
+# def remove_duplicate(s):
+#     s=list(s)
+#     slow=0
+#     for fast in range(len(s)):
+#         if s[fast]!=s[slow]:
+#             slow+=1
+#             s[slow]=s[fast]
+#     return "".join(s[:slow+1])
+# s="abbaaa"
+# print(remove_duplicate(s))
+            
+
+
+# Remove duplicates
+def remove_dup(s):
     s=list(s)
     slow=0
     for fast in range(len(s)):
@@ -34,6 +48,5 @@ def remove_duplicate(s):
             slow+=1
             s[slow]=s[fast]
     return "".join(s[:slow+1])
-s="abbaaa"
-print(remove_duplicate(s))
-            
+s="AAAAABBBFSSDSA"
+print(remove_dup(s))
