@@ -40,13 +40,31 @@
 
 
 # Remove duplicates
-def remove_dup(s):
-    s=list(s)
-    slow=0
-    for fast in range(len(s)):
-        if s[fast]!=s[slow]:
-            slow+=1
-            s[slow]=s[fast]
-    return "".join(s[:slow+1])
-s="AAAAABBBFSSDSA"
-print(remove_dup(s))
+# def remove_dup(s):
+#     s=list(s)
+#     slow=0
+#     for fast in range(len(s)):
+#         if s[fast]!=s[slow]:
+#             slow+=1
+#             s[slow]=s[fast]
+#     return "".join(s[:slow+1])
+# s="AAAAABBBFSSDSA"
+# print(remove_dup(s))
+
+
+# leetcode() Merge alternatively
+def mergeAlternately(word1, word2):
+    res=[]
+    i=0
+    j=0
+    while i<len(word1) or j<len(word2):
+        if i<len(word1):
+            res.append(word1[i])
+            i+=1
+        if j<len(word2):
+            res.append(word2[j])
+            j+=1
+    return "".join(res)
+word1="ace"
+word2="bdf"
+print(mergeAlternately(word1,word2))
