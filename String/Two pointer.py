@@ -127,19 +127,40 @@
 
 
 # Remove duplicates
-def removeDuplicates(s):
-    res = []
-    freq = {}
+# def removeDuplicates(s):
+#     res = []
+#     freq = {}
     
-    for ch in s:
-        freq[ch] = freq.get(ch, 0) + 1
+#     for ch in s:
+#         freq[ch] = freq.get(ch, 0) + 1
 
-    for ch in freq:   # correct indentation
-        if freq[ch] == 1:
-            res.append(ch)
+#     for ch in freq:   # correct indentation
+#         if freq[ch] == 1:
+#             res.append(ch)
     
-    return "".join(res)
+#     return "".join(res)
 
 
-s = "AAbbbaaaccd"
-print(removeDuplicates(s))
+# s = "AAbbbaaaccd"
+# print(removeDuplicates(s))
+
+
+
+# Anagram logic
+def areAnagrams(s1, s2):
+       # code here
+        freq={}
+        for ch in s1:
+            freq[ch]=freq.get(ch,0)+1
+        for ch in s2:
+            if ch not in freq:
+                return False
+            freq[ch]-=1
+        for value in freq.values():
+            if value!=0:
+                return False
+            
+        return True
+s1="abc"
+s2="cbag"
+print(areAnagrams(s1,s2))
