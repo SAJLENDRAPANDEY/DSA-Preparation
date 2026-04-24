@@ -94,18 +94,35 @@
 
 
 # Reverse String
-def reverseString(s: str) -> str:
+# def reverseString(s: str) -> str:
+#         # code here
+#         s=list(s)
+#         left=0
+#         right=len(s)-1
+#         while left<=right:
+#             s[left],s[right]=s[right],s[left]
+#             left+=1
+#             right-=1
+#         return "".join(s)
+# s="abc"
+# print(reverseString(s))
+
+
+
+# Reverse Words(gfg)
+def reverseWords(s):
         # code here
-        s=list(s)
+        word=s.split(".")
+        word=[w for w in word if w!=""]
         left=0
-        right=len(s)-1
-        while left<=right:
-            s[left],s[right]=s[right],s[left]
+        right=len(word)-1
+        while left<right:
+            word[left],word[right]=word[right],word[left]
             left+=1
             right-=1
-        return "".join(s)
-s="abc"
-print(reverseString(s))
+        return ".".join(word)
+s = "i.like.this.program.very.much"
+print(reverseWords(s))
 
 
 
