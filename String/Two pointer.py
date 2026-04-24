@@ -110,20 +110,36 @@
 
 
 # Reverse Words(gfg)
-def reverseWords(s):
-        # code here
-        word=s.split(".")
-        word=[w for w in word if w!=""]
-        left=0
-        right=len(word)-1
-        while left<right:
-            word[left],word[right]=word[right],word[left]
-            left+=1
-            right-=1
-        return ".".join(word)
-s = "i.like.this.program.very.much"
-print(reverseWords(s))
+# def reverseWords(s):
+#         # code here
+#         word=s.split(".")
+#         word=[w for w in word if w!=""]
+#         left=0
+#         right=len(word)-1
+#         while left<right:
+#             word[left],word[right]=word[right],word[left]
+#             left+=1
+#             right-=1
+#         return ".".join(word)
+# s = "i.like.this.program.very.much"
+# print(reverseWords(s))
 
 
 
+# Remove duplicates
+def removeDuplicates(s):
+    res = []
+    freq = {}
+    
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
 
+    for ch in freq:   # correct indentation
+        if freq[ch] == 1:
+            res.append(ch)
+    
+    return "".join(res)
+
+
+s = "AAbbbaaaccd"
+print(removeDuplicates(s))
