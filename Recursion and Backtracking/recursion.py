@@ -7,10 +7,36 @@
 # print(print_1(5))
 
 # q 2-->Print N to 1
-def print_n_1(n):
-    if n==0:
-        return 
-    print(n,end=" ")
-    print_n_1(n-1)
+# def print_n_1(n):
+#     if n==0:
+#         return 
+#     print(n,end=" ")
+#     print_n_1(n-1)
     
-print(print_n_1(5))
+# print(print_n_1(5))
+
+
+# Q 3 ->Fibonacci
+# def fibonacci(n):
+#     if n==0 :
+#         return 0
+#     elif n==1:
+#         return 1
+    
+#     return fibonacci(n-1)+fibonacci(n-2)
+# print(fibonacci(5))
+
+
+
+#  or reduce complexity
+def fibonacci(n,dp={}):
+    if n in dp:
+        return dp[n]
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    dp[n]=fibonacci(n-1,dp)+fibonacci(n-2,dp)
+
+    return dp[n]
+print(fibonacci(5))
