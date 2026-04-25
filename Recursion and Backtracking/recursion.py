@@ -29,14 +29,24 @@
 
 
 #  or reduce complexity
-def fibonacci(n,dp={}):
-    if n in dp:
-        return dp[n]
+# def fibonacci(n,dp={}):
+#     if n in dp:
+#         return dp[n]
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     dp[n]=fibonacci(n-1,dp)+fibonacci(n-2,dp)
+
+#     return dp[n]
+# print(fibonacci(5))
+
+
+# Q 4 --> Sum of N numbers
+def sum_n(n):
     if n==0:
         return 0
     if n==1:
         return 1
-    dp[n]=fibonacci(n-1,dp)+fibonacci(n-2,dp)
-
-    return dp[n]
-print(fibonacci(5))
+    return n+sum_n(n-1)
+print(sum_n(5))
