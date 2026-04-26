@@ -43,10 +43,24 @@
 
 
 # Q 4 --> Sum of N numbers
-def sum_n(n):
-    if n==0:
-        return 0
-    if n==1:
+# def sum_n(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return n+sum_n(n-1)
+# print(sum_n(5))
+
+
+
+# Q 5 --> 
+def factorial(n):
+    # Base case
+    if n == 0 or n == 1:
         return 1
-    return n+sum_n(n-1)
-print(sum_n(5))
+    
+    # Recursive case
+    return n * factorial(n - 1)
+
+# Example usage
+print(factorial(5))  # Output: 120
