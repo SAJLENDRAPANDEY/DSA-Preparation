@@ -54,13 +54,29 @@
 
 
 # Q 5 --> 
-def factorial(n):
+# def factorial(n):
+#     # Base case
+#     if n == 0 or n == 1:
+#         return 1
+    
+#     # Recursive case
+#     return n * factorial(n - 1)
+
+# # Example usage
+# print(factorial(5))  # Output: 120
+
+
+
+# Q 6 ->
+def fibonacci(n):
     # Base case
-    if n == 0 or n == 1:
+    if n == 0:
+        return 0
+    if n == 1:
         return 1
     
     # Recursive case
-    return n * factorial(n - 1)
+    return fibonacci(n-1) + fibonacci(n-2)
 
 # Example usage
-print(factorial(5))  # Output: 120
+print(fibonacci(6))  # Output: 8
