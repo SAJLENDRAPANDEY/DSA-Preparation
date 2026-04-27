@@ -105,11 +105,23 @@
 
 
 # Q 9>Sum of first N numbers
-def sum_n(n):
-    sum=0
-    i=1
-    while i<=n:
-        sum=sum+i
-        i=i+1
-    return sum
-print(sum_n(5))
+# def sum_n(n):
+#     sum=0
+#     i=1
+#     while i<=n:
+#         sum=sum+i
+#         i=i+1
+#     return sum
+# print(sum_n(5))
+
+
+# 10 -- Fibonacci
+def nthFibonacci(n: int) -> int:
+        # code here
+        if n==0:
+            return 0
+        if n==1:
+            return 1
+        return nthFibonacci(n-2)+nthFibonacci(n-1)
+
+print(nthFibonacci(5))
