@@ -68,15 +68,37 @@
 
 
 # Q 6 ->
-def fibonacci(n):
-    # Base case
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
+# def fibonacci(n):
+#     # Base case
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
     
-    # Recursive case
-    return fibonacci(n-1) + fibonacci(n-2)
+#     # Recursive case
+#     return fibonacci(n-1) + fibonacci(n-2)
 
-# Example usage
-print(fibonacci(6))  # Output: 8
+# # Example usage
+# print(fibonacci(6))  # Output: 8
+
+
+
+# Q 7->Sum of N numbers
+# def sum_n(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return n+sum_n(n-1)
+# print(sum_n(5))
+
+
+# Q 8 --> 
+def printNos(n):
+        #Code here
+        if n==0:
+            return 0
+        printNos(n-1)
+        print(n,end=" ")
+        
+print(printNos(5))
