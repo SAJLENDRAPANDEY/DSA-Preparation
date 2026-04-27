@@ -94,11 +94,22 @@
 
 
 # Q 8 --> 
-def printNos(n):
-        #Code here
-        if n==0:
-            return 0
-        printNos(n-1)
-        print(n,end=" ")
+# def printNos(n):
+#         #Code here
+#         if n==0:
+#             return 0
+#         printNos(n-1)
+#         print(n,end=" ")
         
-print(printNos(5))
+# print(printNos(5))
+
+
+# Q 9>Sum of first N numbers
+def sum_n(n):
+    sum=0
+    i=1
+    while i<=n:
+        sum=sum+i
+        i=i+1
+    return sum
+print(sum_n(5))
