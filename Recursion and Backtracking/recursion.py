@@ -116,12 +116,26 @@
 
 
 # 10 -- Fibonacci
-def nthFibonacci(n: int) -> int:
-        # code here
-        if n==0:
-            return 0
-        if n==1:
-            return 1
-        return nthFibonacci(n-2)+nthFibonacci(n-1)
+# def nthFibonacci(n: int) -> int:
+#         # code here
+#         if n==0:
+#             return 0
+#         if n==1:
+#             return 1
+#         return nthFibonacci(n-2)+nthFibonacci(n-1)
 
-print(nthFibonacci(5))
+# print(nthFibonacci(5))
+
+
+# 11-> Palindrome number
+def palindrome(n):
+    n=str(n)
+    left=0
+    right=len(n)-1
+    while left<=right:
+        if n[left]!=n[right]:
+            return False
+        left+=1
+        right-=1
+    return True
+print(palindrome(3555))
