@@ -143,10 +143,20 @@
 
 
 # Q 12 -.> count digit of a number
-def count_digit(n):
-    count=0
-    while n >0:
-        count+=1
-        n=n//10
-    return count
-print(count_digit(2323))
+# def count_digit(n):
+#     count=0
+#     while n >0:
+#         count+=1
+#         n=n//10
+#     return count
+# print(count_digit(2323))
+
+
+#  Q 13 --> Sum of digit
+def sumofdigit(n):
+    n=str(n)
+    sum=0
+    for i in range(len(n)):
+        sum+=int(n[i])
+    return sum
+print(sumofdigit(456))
