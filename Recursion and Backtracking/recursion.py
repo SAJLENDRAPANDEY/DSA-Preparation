@@ -153,10 +153,24 @@
 
 
 #  Q 13 --> Sum of digit
-def sumofdigit(n):
+# def sumofdigit(n):
+#     n=str(n)
+#     sum=0
+#     for i in range(len(n)):
+#         sum+=int(n[i])
+#     return sum
+# print(sumofdigit(456))
+
+
+#  Q 14  --> Reverse digit
+def reverse_digit(n):
     n=str(n)
-    sum=0
-    for i in range(len(n)):
-        sum+=int(n[i])
-    return sum
-print(sumofdigit(456))
+    n_list=list(n)
+    left=0
+    right=len(n_list)-1
+    while left<=right:
+        n_list[left],n_list[right]=n_list[right],n_list[left]
+        left+=1
+        right-=1
+    return "".join(n_list)
+print(reverse_digit(234))
