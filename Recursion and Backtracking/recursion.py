@@ -128,14 +128,25 @@
 
 
 # 11-> Palindrome number
-def palindrome(n):
-    n=str(n)
-    left=0
-    right=len(n)-1
-    while left<=right:
-        if n[left]!=n[right]:
-            return False
-        left+=1
-        right-=1
-    return True
-print(palindrome(3555))
+# def palindrome(n):
+#     n=str(n)
+#     left=0
+#     right=len(n)-1
+#     while left<=right:
+#         if n[left]!=n[right]:
+#             return False
+#         left+=1
+#         right-=1
+#     return True
+# print(palindrome(3555))
+
+
+
+# Q 12 -.> count digit of a number
+def count_digit(n):
+    count=0
+    while n >0:
+        count+=1
+        n=n//10
+    return count
+print(count_digit(2323))
