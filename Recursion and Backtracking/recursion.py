@@ -163,14 +163,36 @@
 
 
 #  Q 14  --> Reverse digit
+# def reverse_digit(n):
+#     n=str(n)
+#     n_list=list(n)
+#     left=0
+#     right=len(n_list)-1
+#     while left<=right:
+#         n_list[left],n_list[right]=n_list[right],n_list[left]
+#         left+=1
+#         right-=1
+#     return "".join(n_list)
+# print(reverse_digit(234))
+
+
+#   or code
+# def reverse_digit(n):
+#     if n<10:
+#         return n
+#     return str(n%10)+reverse_digit(n//10)
+
+
+
+# Q 15 Reverse digit
 def reverse_digit(n):
     n=str(n)
-    n_list=list(n)
+    list_n=list(n)
     left=0
-    right=len(n_list)-1
+    right=len(list_n)-1
     while left<=right:
-        n_list[left],n_list[right]=n_list[right],n_list[left]
+        list_n[left],list_n[right]=list_n[right],list_n[left]
         left+=1
         right-=1
-    return "".join(n_list)
+    return "".join(list_n)
 print(reverse_digit(234))
