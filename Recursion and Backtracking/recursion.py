@@ -185,14 +185,26 @@
 
 
 # Q 15 Reverse digit
-def reverse_digit(n):
-    n=str(n)
-    list_n=list(n)
-    left=0
-    right=len(list_n)-1
-    while left<=right:
-        list_n[left],list_n[right]=list_n[right],list_n[left]
-        left+=1
-        right-=1
-    return "".join(list_n)
-print(reverse_digit(234))
+# def reverse_digit(n):
+#     n=str(n)
+#     list_n=list(n)
+#     left=0
+#     right=len(list_n)-1
+#     while left<=right:
+#         list_n[left],list_n[right]=list_n[right],list_n[left]
+#         left+=1
+#         right-=1
+#     return "".join(list_n)
+# print(reverse_digit(234))
+
+
+# Q 16 -->Fibonacci number
+def fibonacci_number(n):
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    
+    
+    return fibonacci_number(n-1)+fibonacci_number(n-2)
+print(fibonacci_number(6))
