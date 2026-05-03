@@ -199,12 +199,24 @@
 
 
 # Q 16 -->Fibonacci number
-def fibonacci_number(n):
+# def fibonacci_number(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+    
+    
+#     return fibonacci_number(n-1)+fibonacci_number(n-2)
+# print(fibonacci_number(6))
+
+
+
+
+# Q  17 --> Sum of digits of a number
+def sum_of_digit(n):
     if n==0:
         return 0
     if n==1:
         return 1
-    
-    
-    return fibonacci_number(n-1)+fibonacci_number(n-2)
-print(fibonacci_number(6))
+    return n+sum_of_digit(n-1)
+print(sum_of_digit(5))
