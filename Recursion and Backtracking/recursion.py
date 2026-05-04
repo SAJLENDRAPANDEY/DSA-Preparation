@@ -213,10 +213,29 @@
 
 
 # Q  17 --> Sum of digits of a number
-def sum_of_digit(n):
+# def sum_of_digit(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return n+sum_of_digit(n-1)
+# print(sum_of_digit(5))
+
+
+
+#  Interview important questionss
+# Question 1 --> Factorial 
+def fact(n):
+    if n<=1:
+        return 1
+    return n*fact(n-1)
+print(fact(5))
+
+# Question 2 --> Fibonacci
+def fibo(n):
     if n==0:
         return 0
     if n==1:
         return 1
-    return n+sum_of_digit(n-1)
-print(sum_of_digit(5))
+    return fibo(n-1)+fibo(n-2)
+print(fibo(6))
