@@ -266,26 +266,54 @@
 
 
 
-# Question 5 --> Palindrome check
-def palindrom_check(n):
-    n=str(n)
-    left=0
-    right=len(n)-1
-    while left<=right:
-        if n[left]!=n[right]:
+# # Question 5 --> Palindrome check
+# def palindrom_check(n):
+#     n=str(n)
+#     left=0
+#     right=len(n)-1
+#     while left<=right:
+#         if n[left]!=n[right]:
+#             return False
+#         left+=1
+#         right-=1
+#     return True
+# print(palindrom_check(21212))
+
+
+# # Question 6 --> Sum of array
+# def sum_of_arr(arr):
+#     sum=0
+#     for num in arr:
+#         sum+=num
+#     return sum
+# arr=[1,2,3,4,5,6,7,8]
+# print(sum_of_arr(arr))
+
+
+
+# Question 7 -> Check sorted array
+def check_sorted(arr):
+    for i in range(len(arr)-1):
+        if arr[i]>arr[i+1]:
             return False
-        left+=1
-        right-=1
     return True
-print(palindrom_check(21212))
+arr=[1,2,3,2]
+# print(check_sorted(arr))
 
 
-# Question 6 --> Sum of array
-def sum_of_arr(arr):
-    sum=0
+# Question 8 --> Subset
+def subset(arr):
+    res = [[]]
+    
     for num in arr:
-        sum+=num
-    return sum
-arr=[1,2,3,4,5,6,7,8]
-print(sum_of_arr(arr))
+        new_subset = []
+        
+        for curr in res:
+            new_subset.append(curr + [num])
+        
+        res.extend(new_subset)
+    
+    return res
 
+
+print(subset([1,2,3]))
