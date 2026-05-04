@@ -243,23 +243,49 @@
 
 
 # Question  3 --> Sum of N
-def sum_of_n(n):
-    if n==0:
-        return 0
-    if n==1:
-        return 1
-    return n+sum_of_n(n-1)
-print(sum_of_n(5))
+# def sum_of_n(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return n+sum_of_n(n-1)
+# print(sum_of_n(5))
 
 
-# Question 4 --> Reverse string
-def reverse_str(n):
-    n=list(n)
+# # Question 4 --> Reverse string
+# def reverse_str(n):
+#     n=list(n)
+#     left=0
+#     right=len(n)-1
+#     while left<=right:
+#         n[left],n[right]=n[right],n[left]
+#         left+=1
+#         right-=1
+#     return "".join(n)
+# print(reverse_str("abc"))
+
+
+
+# Question 5 --> Palindrome check
+def palindrom_check(n):
+    n=str(n)
     left=0
     right=len(n)-1
     while left<=right:
-        n[left],n[right]=n[right],n[left]
+        if n[left]!=n[right]:
+            return False
         left+=1
         right-=1
-    return "".join(n)
-print(reverse_str("abc"))
+    return True
+print(palindrom_check(21212))
+
+
+# Question 6 --> Sum of array
+def sum_of_arr(arr):
+    sum=0
+    for num in arr:
+        sum+=num
+    return sum
+arr=[1,2,3,4,5,6,7,8]
+print(sum_of_arr(arr))
+
