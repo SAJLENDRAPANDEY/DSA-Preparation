@@ -225,17 +225,41 @@
 
 #  Interview important questionss
 # Question 1 --> Factorial 
-def fact(n):
-    if n<=1:
-        return 1
-    return n*fact(n-1)
-print(fact(5))
+# def fact(n):
+#     if n<=1:
+#         return 1
+#     return n*fact(n-1)
+# # print(fact(5))
 
-# Question 2 --> Fibonacci
-def fibo(n):
+# # Question 2 --> Fibonacci
+# def fibo(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return fibo(n-1)+fibo(n-2)
+# # print(fibo(6))
+
+
+
+# Question  3 --> Sum of N
+def sum_of_n(n):
     if n==0:
         return 0
     if n==1:
         return 1
-    return fibo(n-1)+fibo(n-2)
-print(fibo(6))
+    return n+sum_of_n(n-1)
+print(sum_of_n(5))
+
+
+# Question 4 --> Reverse string
+def reverse_str(n):
+    n=list(n)
+    left=0
+    right=len(n)-1
+    while left<=right:
+        n[left],n[right]=n[right],n[left]
+        left+=1
+        right-=1
+    return "".join(n)
+print(reverse_str("abc"))
