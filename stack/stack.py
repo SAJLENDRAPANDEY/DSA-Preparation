@@ -24,9 +24,22 @@
 
 
 # Question 2 --> Check stack empty or not
-stack=[2]
-def check_empty(stack):
-    return len(stack)==0
+# stack=[2]
+# def check_empty(stack):
+#     return len(stack)==0
         
     
-print(check_empty(stack))
+# print(check_empty(stack))
+
+
+
+# Question 3 -> Print Stack in Reverse
+def reverse_s(s):
+
+    stack=[]
+    for ch in s:
+        stack.append(ch)
+    while stack:
+        print(stack.pop(),end=",")
+        
+reverse_s("123")
