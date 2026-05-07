@@ -87,13 +87,20 @@
 
 
 # q 7 --> Stack copy karo (new stack banao)
-def stack(s):
-    st=[]
-    while s:
-       st.append(s.pop())
-    st.reverse()
-    return st
-s=[1,2,3]
-print(stack(s))
+# def stack(s):
+#     st=[]
+#     while s:
+#        st.append(s.pop())
+#     st.reverse()
+#     return st
+# s=[1,2,3]
+# print(stack(s))
 
-    
+
+# Q 8 --> Stack ko empty karo
+def stack_e(s):
+    while s:
+        s.pop()
+    return len(s)
+s=[1,2,3,4]
+print(stack_e(s))
