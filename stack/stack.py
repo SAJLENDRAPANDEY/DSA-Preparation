@@ -72,17 +72,28 @@
 
 
 # q 6 -> Stack me max element find karo
-def max_stack(stack):
-    if len(stack)==1:
-        return stack
-    max_e=stack[0]
-    while stack:
-        value=stack.pop()
-        if value>max_e:
-            max_e=value
+# def max_stack(stack):
+#     if len(stack)==1:
+#         return stack[0]
+#     max_e=stack[0]
+#     while stack:
+#         value=stack.pop()
+#         if value>max_e:
+#             max_e=value
         
-    return max_e
-stack=[2,3,6,4]
-print(max_stack(stack))
+#     return max_e
+# stack=[2,3,6,4]
+# print(max_stack(stack))
+
+
+# q 7 --> Stack copy karo (new stack banao)
+def stack(s):
+    st=[]
+    while s:
+       st.append(s.pop())
+    st.reverse()
+    return st
+s=[1,2,3]
+print(stack(s))
 
     
