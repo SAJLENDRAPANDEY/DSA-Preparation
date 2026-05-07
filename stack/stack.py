@@ -98,9 +98,21 @@
 
 
 # Q 8 --> Stack ko empty karo
-def stack_e(s):
+# def stack_e(s):
+#     while s:
+#         s.pop()
+#     return len(s)
+# s=[1,2,3,4]
+# print(stack_e(s))
+
+
+# Q 9 --> Count even numbers in stack
+def count_even(s):
+    count=0
     while s:
-        s.pop()
-    return len(s)
-s=[1,2,3,4]
-print(stack_e(s))
+        value=s.pop()
+        if value%2==0:
+            count+=1
+    return count
+s=[1,2,3,4,6]
+print(count_even(s))
