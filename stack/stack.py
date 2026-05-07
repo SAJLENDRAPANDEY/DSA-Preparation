@@ -34,12 +34,55 @@
 
 
 # Question 3 -> Print Stack in Reverse
-def reverse_s(s):
+# def reverse_s(s):
 
-    stack=[]
-    for ch in s:
-        stack.append(ch)
-    while stack:
-        print(stack.pop(),end=",")
+#     stack=[]
+#     for ch in s:
+#         stack.append(ch)
+#     while stack:
+#         print(stack.pop(),end=",")
         
-reverse_s("123")
+# reverse_s("123")
+
+
+# Queston 4 --> check len of stack withought using len function
+# def len_Stack(s):
+#     count=0
+#     while s:
+#         s.pop()
+#         count+=1
+#     return count
+# s=[]
+# print(len_Stack(s))
+
+
+
+# Question 5 ----->  Stack me max element find karo
+
+# def max_ele(stack):
+#     max=0
+#     while stack:
+#         if stack.pop>max:
+#             max=stack.pop
+
+#     return max
+# max_ele(stack=[2,34,5])
+
+
+
+
+# q 6 -> Stack me max element find karo
+def max_stack(stack):
+    if len(stack)==1:
+        return stack
+    max_e=stack[0]
+    while stack:
+        value=stack.pop()
+        if value>max_e:
+            max_e=value
+        
+    return max_e
+stack=[2,3,6,4]
+print(max_stack(stack))
+
+    
