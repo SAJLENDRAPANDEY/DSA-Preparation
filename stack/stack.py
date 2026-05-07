@@ -107,12 +107,23 @@
 
 
 # Q 9 --> Count even numbers in stack
-def count_even(s):
-    count=0
-    while s:
-        value=s.pop()
-        if value%2==0:
-            count+=1
-    return count
-s=[1,2,3,4,6]
-print(count_even(s))
+# def count_even(s):
+#     count=0
+#     while s:
+#         value=s.pop()
+#         if value%2==0:
+#             count+=1
+#     return count
+# s=[1,2,3,4,6]
+# print(count_even(s))
+
+
+
+# Q 10 --> Top 2 elements ka sum print karo
+def stack_t(s):
+    
+    v=s.pop()
+    v2=s.pop()
+    return v+v2
+s=[1,2,3,4]
+print(stack_t(s))
