@@ -120,10 +120,34 @@
 
 
 # Q 10 --> Top 2 elements ka sum print karo
-def stack_t(s):
+# def stack_t(s):
     
-    v=s.pop()
-    v2=s.pop()
-    return v+v2
-s=[1,2,3,4]
-print(stack_t(s))
+#     v=s.pop()
+#     v2=s.pop()
+#     return v+v2
+# s=[1,2,3,4]
+# print(stack_t(s))
+
+
+stack = []
+
+# Push operation
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print("Stack:", stack)
+
+# Pop operation
+stack.pop()
+
+print("After Pop:", stack)
+
+# Peek (Top element)
+print("Top Element:", stack[-1])
+
+# Check empty
+if len(stack) == 0:
+    print("Stack is Empty")
+else:
+    print("Stack is Not Empty")
