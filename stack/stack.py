@@ -129,25 +129,42 @@
 # print(stack_t(s))
 
 
-stack = []
+# stack = []
 
-# Push operation
-stack.append(10)
-stack.append(20)
-stack.append(30)
+# # Push operation
+# stack.append(10)
+# stack.append(20)
+# stack.append(30)
 
-print("Stack:", stack)
+# print("Stack:", stack)
 
-# Pop operation
-stack.pop()
+# # Pop operation
+# stack.pop()
 
-print("After Pop:", stack)
+# print("After Pop:", stack)
 
-# Peek (Top element)
-print("Top Element:", stack[-1])
+# # Peek (Top element)
+# print("Top Element:", stack[-1])
 
-# Check empty
-if len(stack) == 0:
-    print("Stack is Empty")
-else:
-    print("Stack is Not Empty")
+# # Check empty
+# if len(stack) == 0:
+#     print("Stack is Empty")
+# else:
+#     print("Stack is Not Empty")
+
+
+
+
+
+
+
+# Q 11 --> Check palindrome using stack
+def check_palin(s):
+    stack=[]
+    for ch in s:
+        stack.append(ch)
+    for ch in s:
+        if ch != stack.pop():
+            return False
+    return True
+print(check_palin("abaf"))
