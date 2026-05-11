@@ -227,16 +227,46 @@
 
 
 # Q 15 --> middle element find
-def middle_element(stack):
-    n=len(stack)
-    temp=[]
-    for i in range(n//2):
-        temp.append(stack.pop())
-    middle=stack[-1]
-    while temp:
-        stack.append(temp.pop())
-    return middle
-stack=[1,2,4]
-print(middle_element(stack))
+# def middle_element(stack):
+#     n=len(stack)
+#     temp=[]
+#     for i in range(n//2):
+#         temp.append(stack.pop())
+#     middle=stack[-1]
+#     while temp:
+#         stack.append(temp.pop())
+#     return middle
+# stack=[1,2,4]
+# print(middle_element(stack))
+
+# Q 16 --> Sort stack (basic try)
+# def sort_Stack(stack):
+#     temp=[]
+    
+#     while stack:
+#         current=stack.pop()
+#         while temp and temp[-1]>current:
+#             stack.append(temp.pop())
+#         temp.append(current)
+#     return temp
+# stack=[1,3,2]
+# print(sort_Stack(stack))
+
+
+
+
+# using two ptr
+def sort_a(arr):
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)):
+            if arr[i]>arr[j]:
+                arr[i],arr[j]=arr[j],arr[i]
+            i+=1
+            j+=1
+    return arr
+    
+arr=[1,2,3,1,5,4]
+print(sort_a(arr))
+
 
 
