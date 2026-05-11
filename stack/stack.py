@@ -159,12 +159,41 @@
 
 
 # Q 11 --> Check palindrome using stack
-def check_palin(s):
+# def check_palin(s):
+#     stack=[]
+#     for ch in s:
+#         stack.append(ch)
+#     for ch in s:
+#         if ch != stack.pop():
+#             return False
+#     return True
+# print(check_palin("abaf"))
+
+
+# Q 12 Duplicate elements remove ''
+# using two ptr method
+
+# def remove_dup(s):
+#     s.sort()
+#     i=0
+#     for j in range(1,len(s)):
+#         if s[i]!=s[j]:
+#             i+=1
+#             s[i]=s[j]
+#     return s[:i+1]
+# s=[2,3,2,1,3,4]
+# print(remove_dup(s))
+
+
+#  using stack
+
+def remove_duplicate(s):
     stack=[]
+    seen=set()
     for ch in s:
-        stack.append(ch)
-    for ch in s:
-        if ch != stack.pop():
-            return False
-    return True
-print(check_palin("abaf"))
+        if ch not in seen:
+            stack.append(ch)
+            seen.add(ch)
+    return stack
+s=[2,3,2,1,3,2,3,4]
+print(remove_duplicate(s))
