@@ -202,11 +202,25 @@
 
 # Q 13 --> . Reverse stack (IMPORTANT 🔥)
 
-def reverse_stack(s):
-    stack=[]
-    while s:
-        stack.append(s.pop())
-    return stack
-s=[1,2,3]
-print(reverse_stack(s))
+# def reverse_stack(s):
+#     stack=[]
+#     while s:
+#         stack.append(s.pop())
+#     return stack
+# s=[1,2,3]
+# print(reverse_stack(s))
+
+
+
+# Q 14  check stack sorted
+def  check_S(stack):
+    temp=stack[:]
+    while len(temp)>1:
+        top=temp.pop()
+        next_top=temp[-1]
+        if next_top>top:
+            return False
+    return True
+stack=[1,2,3,4,3]
+print(check_S(stack))
 
