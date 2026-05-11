@@ -187,13 +187,26 @@
 
 #  using stack
 
-def remove_duplicate(s):
+# def remove_duplicate(s):
+#     stack=[]
+#     seen=set()
+#     for ch in s:
+#         if ch not in seen:
+#             stack.append(ch)
+#             seen.add(ch)
+#     return stack
+# s=[2,3,2,1,3,2,3,4]
+# print(remove_duplicate(s))
+
+
+
+# Q 13 --> . Reverse stack (IMPORTANT 🔥)
+
+def reverse_stack(s):
     stack=[]
-    seen=set()
-    for ch in s:
-        if ch not in seen:
-            stack.append(ch)
-            seen.add(ch)
+    while s:
+        stack.append(s.pop())
     return stack
-s=[2,3,2,1,3,2,3,4]
-print(remove_duplicate(s))
+s=[1,2,3]
+print(reverse_stack(s))
+
