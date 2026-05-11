@@ -213,14 +213,30 @@
 
 
 # Q 14  check stack sorted
-def  check_S(stack):
-    temp=stack[:]
-    while len(temp)>1:
-        top=temp.pop()
-        next_top=temp[-1]
-        if next_top>top:
-            return False
-    return True
-stack=[1,2,3,4,3]
-print(check_S(stack))
+# def  check_S(stack):
+#     temp=stack[:]
+#     while len(temp)>1:
+#         top=temp.pop()
+#         next_top=temp[-1]
+#         if next_top>top:
+#             return False
+#     return True
+# stack=[1,2,3,4,3]
+# print(check_S(stack))
+
+
+
+# Q 15 --> middle element find
+def middle_element(stack):
+    n=len(stack)
+    temp=[]
+    for i in range(n//2):
+        temp.append(stack.pop())
+    middle=stack[-1]
+    while temp:
+        stack.append(temp.pop())
+    return middle
+stack=[1,2,4]
+print(middle_element(stack))
+
 
