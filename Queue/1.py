@@ -31,11 +31,24 @@ from collections import deque
 
 
 # Q -- 4 -->Count Elements in Queue
-def count_ele(q):
-    count=0
-    for i in q:
-        count+=1
-    return count
+# def count_ele(q):
+#     count=0
+#     for i in q:
+#         count+=1
+#     return count
+# q=deque()
+# q.append(2)
+# print(count_ele(q))
+
+
+# Q 5 --> Reverse Queue
+from collections import deque
+def reverse_q(q):
+    res=[]
+    while q:
+        res.append(q.pop())
+    return res
 q=deque()
+q.append(1)
 q.append(2)
-print(count_ele(q))
+print(reverse_q(q))
