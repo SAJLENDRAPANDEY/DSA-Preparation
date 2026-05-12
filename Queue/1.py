@@ -71,14 +71,30 @@ from collections import deque
 
 
 # Q  7 --> Sum of Queue Elements
-from collections import deque
-def sum_q(q):
-    sum=0
-    for i in q:
-        sum+=i
-    return sum
-q=deque()
-q.append(2)
-q.append(4)
-print(sum_q(q))
+# from collections import deque
+# def sum_q(q):
+#     sum=0
+#     for i in q:
+#         sum+=i
+#     return sum
+# q=deque()
+# q.append(2)
+# q.append(4)
+# print(sum_q(q))
+
+
+
+# Q 8 --> Generate Binary Numbers using Queue
+def generate_bin(n):
+    q=deque()
+    q.append("1")
+    for i in range(n):
+        front=q.popleft()
+        print(front)
+
+        q.append(front+"0")
+        q.append(front+"1")
+generate_bin(5)
+
+
 
