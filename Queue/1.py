@@ -55,15 +55,30 @@ from collections import deque
 
 
 # Q 6 --> Find Maximum Element
+# from collections import deque
+# def max_ele(q):
+#     max_el=0
+#     while q:
+#         value=q.pop()
+#         if max_el<value:
+#             max_el=value
+#     return max_el
+# q=deque()
+# q.append(2)
+# q.append(4)
+# print(max_ele(q))
+
+
+
+# Q  7 --> Sum of Queue Elements
 from collections import deque
-def max_ele(q):
-    max_el=0
-    while q:
-        value=q.pop()
-        if max_el<value:
-            max_el=value
-    return max_el
+def sum_q(q):
+    sum=0
+    for i in q:
+        sum+=i
+    return sum
 q=deque()
 q.append(2)
 q.append(4)
-print(max_ele(q))
+print(sum_q(q))
+
