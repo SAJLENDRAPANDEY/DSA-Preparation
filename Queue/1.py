@@ -42,13 +42,28 @@ from collections import deque
 
 
 # Q 5 --> Reverse Queue
+# from collections import deque
+# def reverse_q(q):
+#     res=[]
+#     while q:
+#         res.append(q.pop())
+#     return res
+# q=deque()
+# q.append(1)
+# q.append(2)
+# print(reverse_q(q))
+
+
+# Q 6 --> Find Maximum Element
 from collections import deque
-def reverse_q(q):
-    res=[]
+def max_ele(q):
+    max_el=0
     while q:
-        res.append(q.pop())
-    return res
+        value=q.pop()
+        if max_el<value:
+            max_el=value
+    return max_el
 q=deque()
-q.append(1)
 q.append(2)
-print(reverse_q(q))
+q.append(4)
+print(max_ele(q))
