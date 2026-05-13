@@ -85,16 +85,40 @@ from collections import deque
 
 
 # Q 8 --> Generate Binary Numbers using Queue
-def generate_bin(n):
-    q=deque()
-    q.append("1")
-    for i in range(n):
-        front=q.popleft()
-        print(front)
+# def generate_bin(n):
+#     q=deque()
+#     q.append("1")
+#     for i in range(n):
+#         front=q.popleft()
+#         print(front)
 
-        q.append(front+"0")
-        q.append(front+"1")
-generate_bin(5)
+#         q.append(front+"0")
+#         q.append(front+"1")
+# generate_bin(5)
 
 
 
+# Q 9 --> leetcode 682 
+def calPoints(operations):
+
+    stack = []
+
+    for op in operations:
+
+        if op == "+":
+            stack.append(stack[-1] + stack[-2])
+
+        elif op == "D":
+            stack.append(2 * stack[-1])
+
+        elif op == "C":
+            stack.pop()
+
+        else:
+            stack.append(int(op))
+
+    return sum(stack)
+
+
+operations = ["5", "2", "C", "D", "+"]
+print(calPoints(operations))
