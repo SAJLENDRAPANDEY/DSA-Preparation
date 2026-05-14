@@ -98,27 +98,51 @@ from collections import deque
 
 
 
-# Q 9 --> leetcode 682 
-def calPoints(operations):
+# Q 9 --> leetcode 682  (Baseball Game)
+# def calPoints(operations):
 
-    stack = []
+#     stack = []
 
-    for op in operations:
+#     for op in operations:
 
-        if op == "+":
-            stack.append(stack[-1] + stack[-2])
+#         if op == "+":
+#             stack.append(stack[-1] + stack[-2])
 
-        elif op == "D":
-            stack.append(2 * stack[-1])
+#         elif op == "D":
+#             stack.append(2 * stack[-1])
 
-        elif op == "C":
-            stack.pop()
+#         elif op == "C":
+#             stack.pop()
 
-        else:
-            stack.append(int(op))
+#         else:
+#             stack.append(int(op))
 
-    return sum(stack)
+#     return sum(stack)
 
 
-operations = ["5", "2", "C", "D", "+"]
-print(calPoints(operations))
+# operations = ["5", "2", "C", "D", "+"]
+# print(calPoints(operations))
+
+
+
+# Q 10-->  Backspace String Compare (leetcode--844)
+def backspaceCompare( s, t):
+
+    def process(string):
+
+        stack = []
+
+        for ch in string:
+
+            if ch == '#':
+                if stack:
+                    stack.pop()
+            else:
+                stack.append(ch)
+
+        return "".join(stack)
+
+    return process(s) == process(t)
+s="#ab"
+t="ab#"
+print(backspaceCompare(s,t))
