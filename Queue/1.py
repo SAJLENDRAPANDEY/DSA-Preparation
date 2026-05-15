@@ -126,23 +126,56 @@ from collections import deque
 
 
 # Q 10-->  Backspace String Compare (leetcode--844)
-def backspaceCompare( s, t):
+# def backspaceCompare( s, t):
 
-    def process(string):
+#     def process(string):
+
+#         stack = []
+
+#         for ch in string:
+
+#             if ch == '#':
+#                 if stack:
+#                     stack.pop()
+#             else:
+#                 stack.append(ch)
+
+#         return "".join(stack)
+
+#     return process(s) == process(t)
+# s="#ab"
+# t="ab#"
+# print(backspaceCompare(s,t))
+
+
+# Leetcode 20 
+class Solution:
+    def isValid(self, s: str) -> bool:
 
         stack = []
 
-        for ch in string:
+        for ch in s:
 
-            if ch == '#':
-                if stack:
-                    stack.pop()
-            else:
+            if ch in "({[":
                 stack.append(ch)
 
-        return "".join(stack)
+            else:
+                if not stack:
+                    return False
 
-    return process(s) == process(t)
-s="#ab"
-t="ab#"
-print(backspaceCompare(s,t))
+                top = stack.pop()
+
+                if (ch == ")" and top != "(") or \
+                   (ch == "}" and top != "{") or \
+                   (ch == "]" and top != "["):
+                    return False
+
+        return len(stack) == 0
+
+
+# Driver Code
+obj = Solution()
+
+s = input("Enter brackets: ")
+
+print(obj.isValid(s))
