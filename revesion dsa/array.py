@@ -13,13 +13,26 @@
 
 
 # Q 2 --> Largest in Array
-def largest(arr):
-        # code here
-        max_e=arr[0]
-        for i in range(1,len(arr)):
-            if arr[i]>max_e:
-                max_e=arr[i]
-                i+=1
-        return max_e
-arr=[2,3,4,1,88,9]
-print(largest(arr))
+# def largest(arr):
+#         # code here
+#         max_e=arr[0]
+#         for i in range(1,len(arr)):
+#             if arr[i]>max_e:
+#                 max_e=arr[i]
+#                 i+=1
+#         return max_e
+# arr=[2,3,4,1,88,9]
+# print(largest(arr))
+
+
+def getSecondLargest(arr):
+        largest=num=-1
+        for num in arr:
+            if num>largest:
+                second=largest
+                largest=num
+            elif num>second and num!=largest:
+                 second=num
+        return second
+arr=[2,3,4,1,5]
+print(getSecondLargest(arr))
