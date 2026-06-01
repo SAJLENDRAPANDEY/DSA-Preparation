@@ -55,10 +55,30 @@
 
 
 # leetcode (268)
-def missing_number(nums):
-    n=len(nums)+1
-    expected_sum=(n*(n+1))//2
-    total_sum=sum(nums)
-    return expected_sum-total_sum
-nums=[1,2,3,4,6]
-print(missing_number(nums))
+# def missing_number(nums):
+#     n=len(nums)+1
+#     expected_sum=(n*(n+1))//2
+#     total_sum=sum(nums)
+#     return expected_sum-total_sum
+# nums=[1,2,3,4,6]
+# print(missing_number(nums))
+
+
+
+# Leetcode (238)
+def mult_a(arr):
+    n=len(arr)
+    result=[]
+    i=0
+    for i in range(n):
+        total=1
+        for j in  range(n):
+            
+            if i!=j:
+                total*=arr[j]
+        result.append(total)
+            
+    return result
+arr=[2,3,1]
+print(mult_a(arr))
+
