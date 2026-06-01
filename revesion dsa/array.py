@@ -41,14 +41,24 @@
 
 
 # leetcode (283) moves zero
-def move_zero(arr):
-    left=0
+# def move_zero(arr):
+#     left=0
     
-    for right in range(len(arr)):
-        if arr[right]!=0:
-            arr[left],arr[right]=arr[right],arr[left]
-            left+=1
+#     for right in range(len(arr)):
+#         if arr[right]!=0:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             left+=1
         
-    return arr
-arr=[1,2,32,0,3,0,8]
-print(move_zero(arr))
+#     return arr
+# arr=[1,2,32,0,3,0,8]
+# print(move_zero(arr))
+
+
+# leetcode (268)
+def missing_number(nums):
+    n=len(nums)+1
+    expected_sum=(n*(n+1))//2
+    total_sum=sum(nums)
+    return expected_sum-total_sum
+nums=[1,2,3,4,6]
+print(missing_number(nums))
