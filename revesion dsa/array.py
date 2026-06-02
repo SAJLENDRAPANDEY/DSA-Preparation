@@ -137,17 +137,32 @@
 
 
 # Leetcode (242)( Valid Anagram)
-def valid_anagram(s,t):
-    if len(s)!=len(t):
-        return False
+# def valid_anagram(s,t):
+#     if len(s)!=len(t):
+#         return False
+#     freq={}
+#     for ch in s:
+#         freq[ch]=freq.get(ch,0)+1
+#     for ch in t:
+#         if ch not in freq or freq[ch]==0:
+#             return False
+#         freq[ch]-=1
+#     return True
+# s="Anagram"
+# t="margnaA"
+# print(valid_anagram(s,t))
+
+
+# leetcode (217. Contains Duplicate)
+
+def check_dupli(arr):
     freq={}
-    for ch in s:
-        freq[ch]=freq.get(ch,0)+1
-    for ch in t:
-        if ch not in freq or freq[ch]==0:
-            return False
-        freq[ch]-=1
-    return True
-s="Anagram"
-t="margnaA"
-print(valid_anagram(s,t))
+    for num in arr:
+        freq[num]=freq.get(num,0)+1
+
+   
+    if freq[num]>1:
+        return True
+    return False
+arr=[2,3]
+print(check_dupli(arr))
