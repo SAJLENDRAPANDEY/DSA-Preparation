@@ -66,19 +66,46 @@
 
 
 # Leetcode (238)
-def mult_a(arr):
-    n=len(arr)
-    result=[]
-    i=0
-    for i in range(n):
-        total=1
-        for j in  range(n):
+# def mult_a(arr):
+#     n=len(arr)
+#     result=[]
+#     i=0
+#     for i in range(n):
+#         total=1
+#         for j in  range(n):
             
-            if i!=j:
-                total*=arr[j]
-        result.append(total)
+#             if i!=j:
+#                 total*=arr[j]
+#         result.append(total)
             
-    return result
-arr=[2,3,1]
-print(mult_a(arr))
+#     return result
+# arr=[2,3,1]
+# print(mult_a(arr))
 
+
+
+
+# Leetcode (169)
+# def majority_ele(arr):
+#     n=len(arr)
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+
+#         if freq[num]>n//2:
+#             return num
+# arr=[2,2,1,1,1,2,2]
+# print(majority_ele(arr))
+
+
+
+# moves zero end
+def moves_zero(arr):
+    left=0
+    for right in range(len(arr)):
+        if arr[right]!=0:
+            arr[left],arr[right]=arr[right],arr[left]
+            left+=1
+    return arr
+arr=[1,3,0,3,0,8]
+print(moves_zero(arr))
