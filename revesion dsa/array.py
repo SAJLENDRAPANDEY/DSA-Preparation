@@ -100,12 +100,54 @@
 
 
 # moves zero end
-def moves_zero(arr):
-    left=0
-    for right in range(len(arr)):
-        if arr[right]!=0:
-            arr[left],arr[right]=arr[right],arr[left]
-            left+=1
-    return arr
-arr=[1,3,0,3,0,8]
-print(moves_zero(arr))
+# def moves_zero(arr):
+#     left=0
+#     for right in range(len(arr)):
+#         if arr[right]!=0:
+#             arr[left],arr[right]=arr[right],arr[left]
+#             left+=1
+#     return arr
+# arr=[1,3,0,3,0,8]
+# print(moves_zero(arr))
+
+
+# missing number
+# def missing_number(arr):
+#     n=len(arr)
+#     actual_sum=(n*(n+1))//2
+#     predicted_sum=sum(arr)
+#     return predicted_sum-actual_sum
+# arr=[1,3,4]
+# print(missing_number(arr))
+
+
+# majority element (size len(arr)//2  se jyada ho  ) 
+# def majority_ele(arr):
+#     n=len(arr)
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+
+#         if freq[num]>n//2:
+#             return num
+#     return -1
+# arr=[3,2,3,2,2,4,4,4,4,4,5]
+# print(majority_ele(arr))
+
+
+
+# Leetcode (242)( Valid Anagram)
+def valid_anagram(s,t):
+    if len(s)!=len(t):
+        return False
+    freq={}
+    for ch in s:
+        freq[ch]=freq.get(ch,0)+1
+    for ch in t:
+        if ch not in freq or freq[ch]==0:
+            return False
+        freq[ch]-=1
+    return True
+s="Anagram"
+t="margnaA"
+print(valid_anagram(s,t))
