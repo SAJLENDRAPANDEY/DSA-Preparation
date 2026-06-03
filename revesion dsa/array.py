@@ -155,14 +155,32 @@
 
 # leetcode (217. Contains Duplicate)
 
-def check_dupli(arr):
-    freq={}
-    for num in arr:
-        freq[num]=freq.get(num,0)+1
+# def check_dupli(arr):
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
 
    
-    if freq[num]>1:
-        return True
-    return False
-arr=[2,3]
-print(check_dupli(arr))
+#     if freq[num]>1:
+#         return True
+#     return False
+# arr=[2,3,3,3]
+# print(check_dupli(arr))
+
+
+# Frequencies in a Limited Array
+
+
+def frequencyCount(arr):
+        #  code here
+        freq={}
+        for num in arr:
+            freq[num]=freq.get(num,0)+1
+            
+        res=[]
+        N=len(arr)
+        for i in range(1,N+1):
+            res.append(freq.get(i,0))
+        return res
+arr= [2, 3, 2, 3, 5]
+print(frequencyCount(arr))
