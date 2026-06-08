@@ -171,16 +171,29 @@
 # Frequencies in a Limited Array
 
 
-def frequencyCount(arr):
-        #  code here
-        freq={}
-        for num in arr:
-            freq[num]=freq.get(num,0)+1
+# def frequencyCount(arr):
+#         #  code here
+#         freq={}
+#         for num in arr:
+#             freq[num]=freq.get(num,0)+1
             
-        res=[]
-        N=len(arr)
-        for i in range(1,N+1):
-            res.append(freq.get(i,0))
-        return res
-arr= [2, 3, 2, 3, 5]
-print(frequencyCount(arr))
+#         res=[]
+#         N=len(arr)
+#         for i in range(1,N+1):
+#             res.append(freq.get(i,0))
+#         return res
+# arr= [2, 3, 2, 3, 5]
+# print(frequencyCount(arr))
+
+
+# Leetcode 217 (Contains Duplicate)
+def check_duplicate(arr):
+    freq={}
+    for num in arr:
+        freq[num]=freq.get(num,0)+1
+    for num in freq:
+        if freq[num]>1:
+            return True
+    return False
+arr=[2,3,4]
+print(check_duplicate(arr))
