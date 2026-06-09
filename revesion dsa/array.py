@@ -187,6 +187,20 @@
 
 
 # Leetcode 217 (Contains Duplicate)
+# def check_duplicate(arr):
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+#     for num in freq:
+#         if freq[num]>1:
+#             return True
+#     return False
+# arr=[2,3,4]
+# print(check_duplicate(arr))
+
+
+
+# 
 def check_duplicate(arr):
     freq={}
     for num in arr:
@@ -195,5 +209,5 @@ def check_duplicate(arr):
         if freq[num]>1:
             return True
     return False
-arr=[2,3,4]
+arr=[2,3,4,4]
 print(check_duplicate(arr))
