@@ -201,7 +201,7 @@
 
 
 # 
-def check_duplicate(arr):
+def check_duplicate_arr(arr):
     freq={}
     for num in arr:
         freq[num]=freq.get(num,0)+1
@@ -210,4 +210,4 @@ def check_duplicate(arr):
             return True
     return False
 arr=[2,3,4,4]
-print(check_duplicate(arr))
+print(check_duplicate_arr(arr))
