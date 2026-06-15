@@ -215,15 +215,31 @@
 
 
 # leetcode 34
-def check(arr,target):
-    first=-1
-    last=-1
+# def check(arr,target):
+#     first=-1
+#     last=-1
+#     for i in range(len(arr)):
+#         if arr[i]==target:
+#             if first==-1:
+#                 first=i
+#             last=i
+#     return [first,last]
+# arr=[2,2,3,4,4,5,5,5,5,5,6]
+# target=5
+# print(check(arr,target))
+
+
+
+# Subarray Sum Equals K (lc=560)
+def subarray(arr,k):
+    count=0
     for i in range(len(arr)):
-        if arr[i]==target:
-            if first==-1:
-                first=i
-            last=i
-    return [first,last]
-arr=[2,2,3,4,4,5,5,5,5,5,6]
-target=5
-print(check(arr,target))
+        total=0
+        for j in range(i,len(arr)):
+            total+=arr[j]
+            if total==k:
+                count+=1
+    return count
+arr=[2,3,2,4,2]
+k=4
+print(subarray(arr,k))
