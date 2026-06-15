@@ -201,13 +201,29 @@
 
 
 # 
-def check_duplicate_arr(arr):
-    freq={}
-    for num in arr:
-        freq[num]=freq.get(num,0)+1
-    for num in freq:
-        if freq[num]>1:
-            return True
-    return False
-arr=[2,3,4,4]
-print(check_duplicate_arr(arr))
+# def check_duplicate_arr(arr):
+#     freq={}
+#     for num in arr:
+#         freq[num]=freq.get(num,0)+1
+#     for num in freq:
+#         if freq[num]>1:
+#             return True
+#     return False
+# arr=[2,3,4,4]
+# print(check_duplicate_arr(arr))
+
+
+
+# leetcode 34
+def check(arr,target):
+    first=-1
+    last=-1
+    for i in range(len(arr)):
+        if arr[i]==target:
+            if first==-1:
+                first=i
+            last=i
+    return [first,last]
+arr=[2,2,3,4,4,5,5,5,5,5,6]
+target=5
+print(check(arr,target))
