@@ -38,13 +38,24 @@
 
 
 # reverse_string(lc-344)
-def reve_str(s):
-    left=0
-    right=len(s)-1
-    while left<=right:
-        s[left],s[right]=s[right],s[left]
-        left+=1
-        right-=1
-    return s
-s=["h","e","l","l","o"]
-print(reve_str(s))
+# def reve_str(s):
+#     left=0
+#     right=len(s)-1
+#     while left<=right:
+#         s[left],s[right]=s[right],s[left]
+#         left+=1
+#         right-=1
+#     return s
+# s=["h","e","l","l","o"]
+# print(reve_str(s))
+
+
+
+# or
+def rev_str(s):
+    res=[]
+    for i in range(len(s)-1,-1,-1):
+        res.append(s[i])
+    return "".join(res)
+s="hello"
+print(rev_str(s))
