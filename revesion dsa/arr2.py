@@ -52,10 +52,26 @@
 
 
 # or
-def rev_str(s):
-    res=[]
-    for i in range(len(s)-1,-1,-1):
-        res.append(s[i])
-    return "".join(res)
-s="hello"
-print(rev_str(s))
+# def rev_str(s):
+#     res=[]
+#     for i in range(len(s)-1,-1,-1):
+#         res.append(s[i])
+#     return "".join(res)
+# s="hello"
+# print(rev_str(s))
+
+
+
+# Q 3 --> Maximum Average Subarray I (lc(643))
+def max_arr(arr,k):
+    n=len(arr)
+    window_sum=sum(arr[:k])
+    max_sum=window_sum
+    for i in range(n-k):
+        window_sum=(window_sum-arr[i]+arr[i+k])
+        max_sum=max(max_sum,window_sum)
+    return (float(max_sum)/k)
+arr=[1,12,-5,-6,50,3]
+k = 4
+
+print(max_arr(arr,k))
