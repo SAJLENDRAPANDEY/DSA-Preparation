@@ -247,18 +247,18 @@
 
 
 # two sum (lc=167)
-def two_sum(arr,target):
-    arr.sort()
-    left=0
-    right=len(arr)-1
-    while left<right:
-        s=arr[left]+arr[right]
-        if s==target:
-            return [left,right]
-        elif s<target:
-            left+=1
-        else:
-            right-=1
-arr=[2,3,4,1]
-target=7
-print(two_sum(arr,target))
+# def two_sum(arr,target):
+#     arr.sort()
+#     left=0
+#     right=len(arr)-1
+#     while left<right:
+#         s=arr[left]+arr[right]
+#         if s==target:
+#             return [left,right]
+#         elif s<target:
+#             left+=1
+#         else:
+#             right-=1
+# arr=[2,3,4,1]
+# target=7
+# print(two_sum(arr,target))
