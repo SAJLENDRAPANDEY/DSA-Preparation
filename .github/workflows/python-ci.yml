@@ -1,0 +1,51 @@
+name: DSA Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-python-files:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify Python Version
+        run: python --version
+
+      - name: Upgrade Pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install Flake8
+        run: pip install flake8
+
+      - name: Lint Python Files
+        run: |
+          flake8 . \
+          --count \
+          --select=E9,F63,F7,F82 \
+          --show-source \
+          --statistics
+
+      - name: Compile All Python Files
+        run: |
+          python -m compileall .
+
+      - name: Repository Structure
+        run: |
+          find . -type f
