@@ -1,3 +1,3 @@
 import qrcode as qr
-img=qr.make("Ram")
-img.save("Hello2.png")
+img=qr.make("Praveen")
+img.save("Hello4.png")

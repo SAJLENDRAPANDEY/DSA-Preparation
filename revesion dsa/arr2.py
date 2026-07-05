@@ -89,14 +89,18 @@
 
 
 # or 
-def max_sum(arr,k):
-    window_sum=sum(arr[:k])
-    max_sum=window_sum
-    n=len(arr)
-    for i in range(n-k):
-        window_sum=window_sum-arr[i]+arr[i+k]
-        max_sum=max(max_sum,window_sum)
-    return max_sum
-arr=[2,3,4,5,2,1]
-k=3
-print(max_sum(arr,k))
+# def max_sum(arr,k):
+#     window_sum=sum(arr[:k])
+#     max_sum=window_sum
+#     n=len(arr)
+#     for i in range(n-k):
+#         window_sum=window_sum-arr[i]+arr[i+k]
+#         max_sum=max(max_sum,window_sum)
+#     return max_sum
+# arr=[2,3,4,5,2,1]
+# k=3
+# print(max_sum(arr,k))
+
+
+
+
