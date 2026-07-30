@@ -104,3 +104,17 @@
 
 
 
+def subarraySum( nums, k):
+    
+    sum_k=nums[0]
+    count=0
+    for i in range(1,len(nums)):
+        if nums[i]==k:
+            count+=1
+        elif sum_k+nums[i]==k:
+            count+=1
+        i+=1
+    return count
+nums=[1,2,3]
+k=3
+print(subarraySum(nums,k))
