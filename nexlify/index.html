@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexlify Preview</title>
+  <style>
+    html, body, #root {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #080812;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    .loading {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"><div class="loading">Loading preview...</div></div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script>
+    (async () => {
+      const root = document.getElementById('root');
+      try {
+        const response = await fetch('./App.jsx');
+        const source = await response.text();
+        const normalized = source
+          .split(/\r?\n/)
+          .filter(line => !line.trimStart().startsWith('import '))
+          .join('\n')
+          .replace(/export\s+default\s+/g, '');
+        const wrapped = 'const { useState, useEffect, useRef } = React;\n' + normalized;
+        const transformed = Babel.transform(wrapped, {
+          presets: [['react', { runtime: 'classic' }]],
+          sourceType: 'script'
+        }).code + '\nReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));';
+        new Function('React', 'ReactDOM', transformed)(React, ReactDOM);
+      } catch (error) {
+        root.innerHTML = '<pre style="color:#fca5a5;white-space:pre-wrap;padding:24px;font-family:Consolas,monospace;">Failed to load preview:\n' + String(error) + '</pre>';
+      }
+    })();
+  </script>
+</body>
+</html>

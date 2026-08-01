@@ -30,7 +30,7 @@ print("Coefficients:", lr.coef_)
 print("Intercept:",lr.intercept_)
 
 
-next step error check krna h 
+# next step error check krna h 
 
 from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error
 
