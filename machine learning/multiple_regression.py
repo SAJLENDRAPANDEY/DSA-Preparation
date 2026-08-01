@@ -7,4 +7,4 @@ import plotly.express as ps
 import plotly.graph_objects as go
 
 
-from sklearn.
+from sklearn.linear_model import LinearRegression

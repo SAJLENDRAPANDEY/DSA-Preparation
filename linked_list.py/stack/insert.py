@@ -104,4 +104,5 @@ class stack:
         self.stack.append(val)
     s="()[]{}"
     def check(self):
+        pass
         
