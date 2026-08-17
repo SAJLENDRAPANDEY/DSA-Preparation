@@ -1,0 +1,12 @@
+{
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true
+}
