@@ -12,6 +12,16 @@ class Stack():
             return
         ele=self.stack.pop()
         print("Element pop:",ele)
+    def peek(self):
+        if not self.stack:
+            print("Stack is Empty")
+            return
+        ele=self.stack.top()
+        print("Top element is :",ele)
+
+    def isempty(self):
+        if len(self.stack)==0:
+            print("Stack is  empty")
 
 
 s=Stack()
@@ -20,4 +30,10 @@ s.push()
 print(s.stack)
 
 s.pop()
+print(s.stack)
+
+s.peek()
+print(s.stack)
+
+s.isempty()
 print(s.stack)
