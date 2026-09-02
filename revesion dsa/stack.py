@@ -16,7 +16,7 @@ class Stack():
         if not self.stack:
             print("Stack is Empty")
             return
-        ele=self.stack.top()
+        ele=self.stack[-1]
         print("Top element is :",ele)
 
     def isempty(self):
@@ -25,6 +25,7 @@ class Stack():
 
 
 s=Stack()
+s.push()
 s.push()
 
 print(s.stack)
