@@ -74,10 +74,19 @@ class Stack:
         self.top=self.top.next
 
         print("Element pop:",ele)
+
+    def peek(self):
+        if self.top is None:
+            print("Stack is Empty")
+            return
+        ele=self.top.data
+        print("Top element is : ",ele)
 s=Stack()
 s.push()
 
-s.pop()
+# s.pop()
+
+s.peek()
 # print(s.push)
 
     
